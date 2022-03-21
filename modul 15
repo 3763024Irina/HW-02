@@ -1,0 +1,83 @@
+//1. создайте переменную, которая будет хранить в себе какую-либо ощибку
+/*enum ListaError: String, Error {
+    case error400 = "некорректный запрос"
+    case error404 = "не найдено"
+    case error500 = "внутрення ошибка сервера"
+}
+var error400: String?
+var error404: Bool = true
+var error500: Bool = true
+//2. добавить проверку переменных в генерирующую функцию
+do {
+    if (error400 != nil) {
+        throw ListaError.error400
+    }
+    if error404 {
+        throw ListaError.error404
+    }
+    if (error400 != nil) {
+        throw ListaError.error500
+    }
+}catch ListaError.error400 {
+    print("некорректный запрос!")
+}catch ListaError.error404 {
+    print("не найдено!")
+}catch ListaError.error500 {
+    print("внутренняя ошибка сервера")
+}*/
+
+
+// 3. напишите функцию, которая будет принимать на вход два разных типа и проверять
+/*func foo <T, E>(x: T,y: E){
+    if type(of: x)==type(of: y)
+    {print("yes")
+        
+    }else{
+        print("No")
+    }
+}
+foo(x: false, y: true)*/
+// ревлизуйте тоже самое, но через исключения
+/*enum FooError: String, LocalizedError {
+    case typeNameEquals = "равно"
+    case notTypeNameEquals = "не равно"
+    
+    var errorDescription: String? {
+        rawValue
+        
+    }
+    
+}
+class FOO {
+    func typeName <T, E>(x: T, y: E) throws {
+        if type(of: x)==type(of: y) {
+           
+            print(FooError.typeNameEquals)
+        } else {
+        throw FooError.notTypeNameEquals
+    }
+    }
+}
+let foo = FOO()
+
+do {
+    try foo.typeName(x: 5, y: true)
+} catch {
+    if let error = error as? FooError {
+        print(error.localizedDescription)
+    } else {
+        print(error)
+    }
+    
+}*/
+
+//5. напишите функцию, которая принимает на вход два любых значения и сравнивает из при помощи ==
+/*func foo <T:Equatable>(x: T, y: T)->Void {
+    if x==y
+    {print("yes")
+           
+    }else{
+      print("no")
+        }
+}
+foo(x: 2, y: 2)*/
